@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <h1>Digital Calculator</h1>
+
+    <div class="mainbox">
+              <div class="answershow">
+                <input type="text"  id="result" readonly >
+              </div>
+              <div class="line"></div>
+
+              <div class="allboxes">
+                <input type="button" class="box ac" value="AC" onclick="clearAnswer()">
+                <input type="button" class="box c" value="C" onclick="clearAnswer()">
+                <input type="button" class="box modolo" value="%" onclick="addToAnswer('%')">
+                <input type="button" class="box mult" value="/" onclick="addToAnswer('/')">
+            </div>
+
+                        <div class="allboxes">
+                            <input type="button" class="box seven" value="7" onclick="addToAnswer('7')">
+                            <input type="button" class="box eight" value="8" onclick="addToAnswer('8')">
+                            <input type="button" class="box nine" value="9"onclick="addToAnswer('9')">
+                            <input type="button" class="box mult" value="*" onclick="addToAnswer('*')">
+                        </div>
+                        <div class="allboxes">
+                            <input type="button" class="box four" value="4" onclick="addToAnswer('4')">
+                            <input type="button" class="box five" value="5" onclick="addToAnswer('5')">
+                            <input type="button" class="box six" value="6" onclick="addToAnswer('6')">
+                            <input type="button" class="box minus" value="-" onclick="addToAnswer('-')">
+                        </div>  
+
+                        <div class="allboxes">
+                            <input type="button" class="box one" value="1" onclick="addToAnswer('1')">
+                            <input type="button" class="box two" value="2" onclick="addToAnswer('2')">
+                            <input type="button" class="box three" value="3" onclick="addToAnswer('3')">
+                            <input type="button" class="box plus" value="+" onclick="addToAnswer('+')">
+                        </div> 
+
+                        <div class="allboxes">
+                            <input type="button" class="box point" value="." onclick="addToAnswer('.')">
+                            <input type="button" class="box zero" value="0" onclick="addToAnswer('0')">
+                            <input type="button" class="box dzero" value="00" onclick="addToAnswer('00')">
+                            <input type="button" class="box isequal" value="=" onclick="calculate()">
+                        </div> 
+
+    </div>
+    <!-- <script src="calculator.js"></script> -->
+    <script>
+        function addToAnswer (value){
+            document.querySelector("#result").value+=value;
+        }
+        function clearAnswer (){
+            document.querySelector("#result").value = "";
+        }
+        function calculate(){
+            let res = document.querySelector("#result").value;
+            let result = eval(res);
+            document.querySelector("#result").value = result;
+        }
+
+    </script>
+</body>
+</html>
